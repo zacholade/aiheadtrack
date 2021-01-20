@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <memory>
+#include <iostream>
 
 #include "Camera.h"
 
@@ -9,7 +10,5 @@
 class CameraFactory
 {
 public:
-	std::unique_ptr<Camera> createCamera(int height, int width, int exposure = -1, int gain = -1);
-	std::vector<std::shared_ptr<Camera>> findAllCameras();
+	std::vector<std::shared_ptr<Camera>> findAllCameras(int width, int height, int exposure = -1, int gain = -1, int maxIndex = 5);
 };
-
